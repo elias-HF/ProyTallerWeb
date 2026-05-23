@@ -578,6 +578,10 @@ footer {
 .dark-mode .hero p{
     color: #c7a55b;
 }
+.dark-mode .comentario-autor{
+    color: #e0ede8;
+    font-weight: bold;
+}
 
 @media (max-width: 768px) {
     html {
