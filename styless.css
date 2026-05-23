@@ -575,6 +575,9 @@ footer {
     background-color: #f5ebd5; 
     color: #1e2f2b !important;  
 }
+.dark-mode .hero p{
+    color: #c7a55b;
+}
 
 @media (max-width: 768px) {
     html {
