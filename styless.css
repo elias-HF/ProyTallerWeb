@@ -199,6 +199,7 @@ nav {
 }
 
 .product-card {
+
     background: white;
     border-radius: 20px;
     overflow: hidden;
@@ -206,6 +207,11 @@ nav {
     text-align: center;
     padding-bottom: 16px;
     transition: 0.25s;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .product-card:hover {
@@ -231,11 +237,11 @@ nav {
     font-size: 1.2rem;
 }
 
-.btn-agregar {
+.btn-agregar, .btn-agregar-dest {
     background: #1e2f2b;
     color: white;
     border: none;
-    padding: 8px 20px;
+    padding: 10px 20px;
     border-radius: 40px;
     margin-top: 8px;
     cursor: pointer;
@@ -243,7 +249,7 @@ nav {
     transition: 0.2s;
 }
 
-.btn-agregar:hover {
+.btn-agregar:hover, .btn-agregar-dest:hover {
     background: #c7a55b;
     color: #1e2f2b;
 }
@@ -532,7 +538,7 @@ footer {
 .dark-mode p, 
 .dark-mode .comentario-detalle, 
 .dark-mode .product-card p {
-    color: #FAE5B1 !important; 
+    color: #FAE5B1 ; 
 }
 .dark-mode h3 {
     color: #FAE5B1;
@@ -553,6 +559,21 @@ footer {
 }
 .dark-mode .nav-links a:hover {
     color: #c7a55b;
+}
+
+.dark-mode .product-card {
+    background: #2a2a3a ; 
+    box-shadow: 0 8px 18px rgba(0,0,0,0.3); 
+}
+
+.dark-mode .btn-agregar, .dark-mode .btn-agregar-dest {
+    background-color: #c7a55b; 
+    color: white !important;
+}
+
+.dark-mode .btn-agregar:hover, .dark-mode .btn-agregar-dest:hover {
+    background-color: #f5ebd5; 
+    color: #1e2f2b !important;  
 }
 
 @media (max-width: 768px) {
