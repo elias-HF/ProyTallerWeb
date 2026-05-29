@@ -774,6 +774,15 @@ footer {
     font-weight: bold;
 }
 
+.dark-mode .modal-content {
+    background: #2a2a3a; 
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); 
+}
+.dark-mode .formulario-resena {
+    background: #967b30;
+}
+
+
 @media (max-width: 768px) {
     html {
         font-size: 85%;
