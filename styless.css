@@ -499,6 +499,197 @@ footer {
     border-radius: 12px;
     margin-top: 12px;
 }
+
+/* Reseñas y Calificaciones */
+.rating-section {
+    margin: 8px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.stars-display {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.star-icon {
+    color: #ddd;
+    font-size: 1rem;
+}
+
+.star-icon.filled {
+    color: #FFD700;
+}
+
+.rating-text {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.btn-resenas {
+    background: #c7a55b;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 40px;
+    margin-top: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+    font-size: 0.9rem;
+}
+
+.btn-resenas:hover {
+    background: #a5833e;
+}
+
+/* Modal de Reseñas */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #e9e5df;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.modal-close:hover {
+    background: #d3ccc2;
+}
+
+.modal-content h3 {
+    color: #1e2f2b;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #c7a55b;
+    padding-bottom: 10px;
+}
+
+.resenas-container {
+    margin-bottom: 30px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.resena-item {
+    background: #f9f7f5;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border-left: 4px solid #c7a55b;
+}
+
+.resena-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.resena-avatar {
+    font-size: 2rem;
+}
+
+.resena-info {
+    flex: 1;
+}
+
+.resena-info strong {
+    color: #1e2f2b;
+    display: block;
+}
+
+.resena-stars {
+    color: #FFD700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.resena-comentario {
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.sin-resenas {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    padding: 20px;
+}
+
+.formulario-resena {
+    background: #f3efe8;
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.formulario-resena h4 {
+    color: #1e2f2b;
+    margin-bottom: 15px;
+}
+
+.stars-input {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+    font-size: 2rem;
+}
+
+.stars-input .star {
+    cursor: pointer;
+    color: #ccc;
+    transition: 0.2s;
+}
+
+.stars-input .star:hover,
+.stars-input .star.active {
+    color: #FFD700;
+}
+
+.formulario-resena .form-group {
+    margin-bottom: 12px;
+}
+
+.formulario-resena textarea {
+    resize: vertical;
+}
+
+.formulario-resena .btn-submit {
+    width: 100%;
+}
+
 /* Estilos para modo oscuro */
 #toggle{
     display: none;
