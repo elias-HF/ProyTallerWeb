@@ -359,3 +359,33 @@ document.getElementById("limpiarDatosBtn")?.addEventListener("click", () => {
         console.log("Sesión restaurada para:", user.nombre);
     }
 });
+
+//modo oscuro
+let toggle=document.getElementById("toggle");
+let labelDarkMode=document.getElementById("labelDarkMode");
+//guardamos el modo oscuro en localStorage para mantener la preferencia del usuario
+const darkModeGuardado = localStorage.getItem("darkMode") === "true";
+
+if(darkModeGuardado && toggle && labelDarkMode){
+    toggle.checked = true;
+    document.body.classList.add("dark-mode");
+    labelDarkMode.innerHTML='<i class="fa-solid fa-sun"></i>';
+    labelDarkMode.style.color="#c7a55b";
+
+}
+
+toggle.addEventListener("change",(event)=>{
+    let checked=event.target.checked;
+    document.body.classList.toggle("dark-mode");
+
+    //guardamos el estado en el LocalStorage
+    localStorage.setItem("darkMode", checked);
+
+    if(checked==true){
+        labelDarkMode.innerHTML='<i class="fa-solid fa-sun"></i>';
+        labelDarkMode.style.color="#c7a55b";
+    }else{
+        labelDarkMode.innerHTML='<i class="fa-solid fa-moon"></i>';
+        labelDarkMode.style.color="#053B05";
+    }
+})
