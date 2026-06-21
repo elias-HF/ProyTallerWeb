@@ -1,16 +1,13 @@
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/javascript.js to edit this template
- */
 
+// Actualizar info de los productos con imagenes apropiadas
 const productos = [
-    { id: 1, nombre: "Polo Algodón Mujer", precio: 49.90, img: "https://picsum.photos/id/20/300/200", destacado: true },
-    { id: 2, nombre: "Jeans Hombre Skinny", precio: 89.90, img: "https://picsum.photos/id/26/300/200", destacado: true },
-    { id: 3, nombre: "Zapatillas Urbanas", precio: 129.90, img: "https://picsum.photos/id/96/300/200", destacado: true },
-    { id: 4, nombre: "Chompa para Niño", precio: 59.90, img: "https://picsum.photos/id/30/300/200", destacado: false },
-    { id: 5, nombre: "Bolso de Mano", precio: 79.90, img: "https://picsum.photos/id/82/300/200", destacado: false },
-    { id: 6, nombre: "Camisa Formal Hombre", precio: 109.90, img: "https://picsum.photos/id/133/300/200", destacado: true },
-    { id: 7, nombre: "Vestido Primavera", precio: 99.90, img: "https://picsum.photos/id/45/300/200", destacado: false }
+    { id: 1, nombre: "Polo Algodón Mujer", precio: 49.90, img: "Recursos/RopaAlgodonMujer.jpg", destacado: true },
+    { id: 2, nombre: "Jeans Hombre Skinny", precio: 89.90, img: "Recursos/JeansHombreSkinny.jpg", destacado: true },
+    { id: 3, nombre: "Zapatillas Urbanas", precio: 129.90, img: "Recursos/ZapatillasUrbanas.jpg", destacado: true },
+    { id: 4, nombre: "Chompa para Niño", precio: 59.90, img: "Recursos/ChompaNino.jpg", destacado: false },
+    { id: 5, nombre: "Bolso de Mano", precio: 79.90, img: "Recursos/BolsoMano.jpg", destacado: false },
+    { id: 6, nombre: "Camisa Formal Hombre", precio: 109.90, img: "Recursos/CamisaFormalHombre.jpg", destacado: true },
+    { id: 7, nombre: "Vestido Primavera", precio: 99.90, img: "Recursos/VestidoPrimavera.jpg", destacado: false }
 ];
 
 let resenas = JSON.parse(localStorage.getItem("textilnova_resenas")) || {};
