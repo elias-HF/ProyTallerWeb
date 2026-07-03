@@ -84,3 +84,25 @@ function showSection(sectionId) {
     
     localStorage.setItem("currentSection", sectionId);
 }
+
+// Alerta de promocion apenas se entra a la pagina
+function showSection(sectionId) {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(sec => sec.classList.remove('active-section'));
+    const activeSec = document.getElementById(sectionId);
+    if(activeSec) activeSec.classList.add('active-section');
+    
+    // Si el usuario entra a la sección de productos, le mostramos un aviso
+    if (sectionId === "productos") {
+        alert("¡Aprovecha! Solo por hoy tenemos 10% de descuento usando el código: TextilNova");
+    }
+
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        const linkSection = link.dataset.section;
+        if(linkSection === sectionId) link.classList.add('active');
+        else link.classList.remove('active');
+    });
+        
+    localStorage.setItem("currentSection", sectionId);
+}
