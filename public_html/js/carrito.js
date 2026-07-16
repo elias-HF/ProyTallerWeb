@@ -1,6 +1,5 @@
 
 // JavaScript exclusivo para todo lo relacionado con el carrito de compras.
-
 function iniciarCarrito() {
     document.getElementById("aplicarDescuentoBtn")?.addEventListener("click", () => {
         const codigo = document.getElementById("codigoDescuento").value.trim();
@@ -28,7 +27,7 @@ function agregarAlCarrito(id) {
         if(existente){
             existente.cantidad++;
         } else {
-            carrito.push({ id: prod.id, nombre: prod.nombre, precio: prod.precio, cantidad: 1 });
+            carrito.push({id: prod.id, nombre: prod.nombre, precio: prod.precio, img: prod.img, cantidad: 1});
         }
         actualizarCarritoUI();
     }
@@ -37,33 +36,81 @@ function agregarAlCarrito(id) {
 function actualizarCarritoUI() {
     const cartList = document.getElementById("cartList");
     const cartTotalSpan = document.getElementById("cartTotal");
+    const contador = document.getElementById("contadorCarrito");
+
     if(!cartList) return;
-    if(carrito.length === 0){
-        cartList.innerHTML = "<li>Carrito vacío</li>";
-        cartTotalSpan.innerText = "0.00";
+    cartList.innerHTML = "";
+    if(carrito.length===0){
+        cartList.innerHTML=`
+            <div class="carrito-vacio">
+                <h3>🛒 Tu carrito está vacío</h3>
+                <p>Agrega productos del catálogo.</p>
+            </div>
+        `;
+
+        cartTotalSpan.innerText="0.00";
+        if(contador)contador.innerText="0";
         return;
     }
-    let total = 0;
-    cartList.innerHTML = "";
-    carrito.forEach((item, idx) => {
-        const subtotal = item.precio * item.cantidad;
-        total += subtotal;
-        const li = document.createElement("li");
-        li.style.marginBottom = "8px";
-        li.innerHTML = `${item.nombre} x ${item.cantidad} - S/ ${subtotal.toFixed(2)} 
-            <button style="margin-left:10px; background:#aaa; border:none; border-radius:20px; padding:2px 8px;" 
-                    class="eliminar-item" data-idx="${idx}">❌</button>`;
-        cartList.appendChild(li);
-    });
-    const totalConDescuento = total * factorDescuento;
-    cartTotalSpan.innerText = totalConDescuento.toFixed(2);
 
-    document.querySelectorAll(".eliminar-item").forEach(btn => {
-        btn.addEventListener("click", (e) => {
-            const idx = parseInt(btn.dataset.idx);
-            carrito.splice(idx, 1);
+    let total=0;
+    let cantidadTotal=0;
+
+    carrito.forEach((item,idx)=>{
+        cantidadTotal+=item.cantidad;
+        const subtotal=item.precio*item.cantidad;
+        total+=subtotal;
+        const card=document.createElement("div");
+        card.className="cart-card";
+        
+        card.innerHTML=`
+            <img src="${item.img}" class="cart-img">
+            <div class="cart-info">
+                <h3>${item.nombre}</h3>
+                <p>Precio: <strong>S/ ${item.precio.toFixed(2)}</strong></p>
+                <div class="cantidad">
+                    <button class="menos" data-idx="${idx}">−</button>
+                    <span>${item.cantidad}</span>
+                    <button class="mas" data-idx="${idx}">+</button>
+                </div>
+                <p class="subtotal"> Subtotal: S/ ${subtotal.toFixed(2)} </p>
+            </div>
+
+            <button class="eliminar-item" data-idx="${idx}"> 🗑️</button>
+        `;
+
+        cartList.appendChild(card);
+    });
+
+    cartTotalSpan.innerText=(total*factorDescuento).toFixed(2);
+    if(contador){contador.innerText=cantidadTotal;}
+    
+    agregarEventosCarrito();
+}
+
+function agregarEventosCarrito(){
+    document.querySelectorAll(".mas").forEach(btn=>{
+        btn.onclick=()=>{
+            carrito[btn.dataset.idx].cantidad++;
             actualizarCarritoUI();
-        });
+        };
+    });
+
+    document.querySelectorAll(".menos").forEach(btn=>{
+        btn.onclick=()=>{
+            const item=carrito[btn.dataset.idx];
+            item.cantidad--;
+
+            if(item.cantidad<=0){carrito.splice(btn.dataset.idx,1);}
+            actualizarCarritoUI();
+        };
+    });
+
+    document.querySelectorAll(".eliminar-item").forEach(btn=>{
+        btn.onclick=()=>{
+            carrito.splice(btn.dataset.idx,1);
+            actualizarCarritoUI();
+        };
     });
 }
 

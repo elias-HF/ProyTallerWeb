@@ -2,6 +2,9 @@
 // JavaScript exclusivo para todo lo relacionado con el carrito de compras.
 
 function iniciarFormularios(){
+    renderSugerenciasTabla();
+    renderReclamosTabla();
+    
     document.getElementById("formSugerencia")?.addEventListener("submit", (e) => {
         e.preventDefault();
         const nombre = document.getElementById("sugNombre").value.trim();
@@ -67,8 +70,12 @@ function iniciarFormularios(){
                 document.getElementById("registroMsg").innerHTML = "<div class='mensaje-error'>El correo ya está registrado</div>";
                 return;
             }
+
             usuarios.push({ nombre, apellidoP, apellidoM, email, password, numDoc, celular, genero });
+            console.log("Usuarios guardados:", usuarios);
             localStorage.setItem("textilnova_usuarios", JSON.stringify(usuarios));
+            console.log("LocalStorage:", localStorage.getItem("textilnova_usuarios"));
+            
             document.getElementById("registroMsg").innerHTML = "<div class='mensaje-exito'>✅ Registro exitoso. Ahora puedes iniciar sesión.</div>";
             document.getElementById("formRegistro").reset();
             setTimeout(() => showSection("login"), 2000);

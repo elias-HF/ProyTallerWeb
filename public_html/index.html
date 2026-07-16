@@ -1,407 +1,377 @@
 
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>TextilNova | Moda Peruana de Calidad</title>
-    <link rel="stylesheet" href="styless.css">
-    <!-- libreria para el boton de modo oscuro -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
-<body>
-    <!-- boton para cambiar a modo oscuro -->
-    <div class="top-bar">
-        <span>Envíos a todo Perú | 3 cuotas sin interés</span>
-        <span>📞 Atención: (01) 555 7890</span>
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <title>TextilNova | Moda Peruana de Calidad</title>
+        <link rel="stylesheet" href="styless.css">
+        <!-- libreria para el boton de modo oscuro -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </head>
 
-    <nav>
-        <div class="nav-container">
-            <div class="darkMode-container">
-                <label for="toggle" id="labelDarkMode"><i class="fa-solid fa-moon"></i></label>
-                <input type="checkbox" id="toggle">
-            </div>
-            <div class="logo-area">
-                <h1>TextilNova</h1>
-                <p>Calidad & Tradición</p>
-            </div>
-            <!-- Menú Hamburguesa -->
-            <div class="menu-icon" id="menuToggle">☰</div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#" data-section="home">Inicio</a></li>
-                <li><a href="#" data-section="productos">Productos</a></li>
-                <li><a href="#" data-section="sugerencias">Sugerencias</a></li>
-                <li><a href="#" data-section="reclamaciones">Libro Reclamaciones</a></li>
-                <li><a href="#" data-section="contacto">Contáctenos / Ubícanos</a></li>
-                <li><a href="#" data-section="videos">Videos</a></li>
-                <li><a href="#" data-section="nosotros">Nosotros</a></li>
-                <li><a href="#" data-section="registro">Registro</a></li>
-                <li><a href="#" data-section="login">Iniciar Sesión</a></li>
-            </ul>
-        </div>
-    </nav>
+    <body>
+        <div id="header"></div> <!-- Parte del header -->
 
-    <div class="container" id="appContainer">
-        <div id="home" class="section active-section">
-            <div class="hero">
-                <h2>TextilNova</h2>
-                <p>Ropa buena en estilo y para el bolsillo</p>
-                <div style="margin-top: 15px;">
-                    <button class="btn-submit" id="verProductosBtn">Inicio</button>
-                    <button class="btn-submit" id="verRegistroBtnHome" style="margin-left: 10px;">Registro</button>
+        <div class="container" id="appContainer">
+            <div id="home" class="section active-section">
+                <div class="hero">
+                    <h2>TextilNova</h2>
+                    <p>Ropa buena en estilo y para el bolsillo</p>
+                    <div style="margin-top: 15px;">
+                        <button class="btn-submit" id="verProductosBtn">Inicio</button>
+                        <button class="btn-submit" id="verRegistroBtnHome" style="margin-left: 10px;">Registro</button>
+                    </div>
+                </div>
+
+                <div class="banner-promo">
+                    <p> ROPA, ACCESORIOS Y CALZADO</p>
+                    <p> ENVÍOS GRATIS CON COMPRAS SUPERIORES A S/.89.99</p>
+                </div>
+
+                <div class="comentarios-destacados">
+                    <h3>Comentarios Destacados:</h3>
+                    <div class="comentarios-grid">
+                        <div class="comentario-card">
+                            <div class="comentario-texto">"Excelente Servicio"</div>
+                            <div class="comentario-autor">Marcos Aurelio</div>
+                            <div class="comentario-detalle">Buen servicio de entrega</div>
+                        </div>
+                        <div class="comentario-card">
+                            <div class="comentario-texto">"Materiales de calidad"</div>
+                            <div class="comentario-autor">Paula Malaga</div>
+                            <div class="comentario-detalle">Los materiales son de buena calidad. Me gustó mucho.</div>
+                        </div>
+                        <div class="comentario-card">
+                            <div class="comentario-texto">"Rápido y Fácil"</div>
+                            <div class="comentario-autor">Mario Vargas</div>
+                            <div class="comentario-detalle">Mi pedido llegó súper rápido</div>
+                        </div>
+                        <div class="comentario-card">
+                            <div class="comentario-texto">"Variedad de Productos"</div>
+                            <div class="comentario-autor">Laura Cruz</div>
+                            <div class="comentario-detalle">Encontré una variedad de productos. Me encanta.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destacados" style="margin-top: 40px;">
+                    <h3>Novedades de la temporada</h3>
+                    <div class="product-grid" id="destacadosGrid"></div>
                 </div>
             </div>
 
-            <div class="banner-promo">
-                <p>👕 ROPA, ACCESORIOS Y CALZADO</p>
-                <p>🚚 ENVÍOS GRATIS CON COMPRAS SUPERIORES A S/.89.99</p>
-            </div>
+            <div id="productos" class="section">
+                <h2> Catálogo TextilNova</h2>
+                
+                <!-- Nueva sección para productos -->
+                <div class="buscador-productos">
+                    <input type="text" id="buscarProducto" placeholder="Buscar productos...">
+                </div>
+                
+                <div class="product-grid" id="catalogoProductos"></div>
 
-            <div class="comentarios-destacados">
-                <h3>Comentarios Destacados:</h3>
-                <div class="comentarios-grid">
-                    <div class="comentario-card">
-                        <div class="comentario-texto">"Excelente Servicio"</div>
-                        <div class="comentario-autor">Marcos Aurelio</div>
-                        <div class="comentario-detalle">Buen servicio de entrega</div>
-                    </div>
-                    <div class="comentario-card">
-                        <div class="comentario-texto">"Materiales de calidad"</div>
-                        <div class="comentario-autor">Paula Malaga</div>
-                        <div class="comentario-detalle">Los materiales son de buena calidad. Me gustó mucho.</div>
-                    </div>
-                    <div class="comentario-card">
-                        <div class="comentario-texto">"Rápido y Fácil"</div>
-                        <div class="comentario-autor">Mario Vargas</div>
-                        <div class="comentario-detalle">Mi pedido llegó súper rápido</div>
-                    </div>
-                    <div class="comentario-card">
-                        <div class="comentario-texto">"Variedad de Productos"</div>
-                        <div class="comentario-autor">Laura Cruz</div>
-                        <div class="comentario-detalle">Encontré una variedad de productos. Me encanta.</div>
+                <!-- Modal de Reseñas -->
+                <div id="reseniasModal" class="modal-overlay" style="display: none;">
+                    <div class="modal-content">
+                        <button class="modal-close" id="cerrarModal">✕</button>
+                        <h3>⭐ Reseñas de <span id="productoNombreModal"></span></h3>
+                        <div id="reseniasLista" class="resenas-container"></div>
+
+                        <div class="formulario-resena">
+                            <h4>Agregar tu reseña</h4>
+                            <div class="form-group">
+                                <label>Tu nombre</label>
+                                <input type="text" id="resNombre" placeholder="Ej: Carlos">
+                            </div>
+                            <div class="form-group">
+                                <label>Calificación (⭐ 1-5)</label>
+                                <div class="stars-input" id="starsInput">
+                                    <span class="star" data-value="1">★</span>
+                                    <span class="star" data-value="2">★</span>
+                                    <span class="star" data-value="3">★</span>
+                                    <span class="star" data-value="4">★</span>
+                                    <span class="star" data-value="5">★</span>
+                                </div>
+                                <input type="hidden" id="resCalificacion" value="0">
+                            </div>
+                            <div class="form-group">
+                                <label>Tu comentario</label>
+                                <textarea id="resComentario" rows="3" placeholder="Comparte tu experiencia con este producto..."></textarea>
+                            </div>
+                            <button id="enviarResenaBtn" class="btn-submit">Enviar reseña</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="destacados" style="margin-top: 40px;">
-                <h3>Novedades de la temporada</h3>
-                <div class="product-grid" id="destacadosGrid"></div>
-            </div>
-        </div>
+            <!-- Mejora del carrito -->
+            <div id="carrito" class="section">
+                <h2>🛒 Mi Carrito</h2>
+                <div class="cart-section">
+                    <ul id="cartList"></ul>
+                    <p><strong>Total: S/<span id="cartTotal">0.00</span></strong></p>
 
-        <div id="productos" class="section">
-            <h2>👕 Catálogo TextilNova</h2>
-            <div class="product-grid" id="catalogoProductos"></div>
+                    <div class="codigo-descuento">
+                        <label>🎟️ Código de descuento</label>
+                        <input
+                            type="text"
+                            id="codigoDescuento"
+                            placeholder="Ej: DESC10">
+                        <button id="aplicarDescuentoBtn" class="btn-small"> Aplicar </button>
+                    </div>
+
+                    <button class="btn-submit" id="checkoutBtn">Finalizar Compra</button>
+                    <div id="cartMessage"></div>
+                </div>
+            </div>
             
-            <!-- Modal de Reseñas -->
-            <div id="reseniasModal" class="modal-overlay" style="display: none;">
-                <div class="modal-content">
-                    <button class="modal-close" id="cerrarModal">✕</button>
-                    <h3>⭐ Reseñas de <span id="productoNombreModal"></span></h3>
-                    <div id="reseniasLista" class="resenas-container"></div>
-                    
-                    <div class="formulario-resena">
-                        <h4>Agregar tu reseña</h4>
+            <div id="sugerencias" class="section">
+                <h2>Formulario de Sugerencias</h2>
+                <form id="formSugerencia">
+                    <div class="form-group">
+                        <label>Nombre completo</label>
+                        <input type="text" id="sugNombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Correo electrónico</label>
+                        <input type="email" id="sugEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Tu sugerencia</label>
+                        <textarea rows="3" id="sugMensaje" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar sugerencia</button>
+                </form>
+                <h3>Sugerencias recibidas</h3>
+                <table class="tabla-datos">
+                    <thead>
+                        <tr><th>Nombre</th><th>Correo</th><th>Sugerencia</th></tr>
+                    </thead>
+                    <tbody id="sugerenciasBody"></tbody>
+                </table>
+            </div>
+
+            <div id="reclamaciones" class="section">
+                <h2> Libro de Reclamaciones</h2>
+                <form id="formReclamacion">
+                    <div class="form-group">
+                        <label>DNI / RUC</label>
+                        <input type="text" id="recDoc" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nombre o Razón Social</label>
+                        <input type="text" id="recNombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Pedido / Referencia (opcional)</label>
+                        <input type="text" id="recPedido">
+                    </div>
+                    <div class="form-group">
+                        <label>Motivo del reclamo</label>
+                        <textarea rows="3" id="recDetalle" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Medio de contacto</label>
+                        <input type="text" id="recContacto" placeholder="Teléfono o correo">
+                    </div>
+                    <button type="submit" class="btn-submit">Registrar Reclamación</button>
+                </form>
+                <h3>Reclamos registrados</h3>
+                <table class="tabla-datos">
+                    <thead>
+                        <tr><th>Documento</th><th>Nombre</th><th>Reclamo</th><th>Contacto</th></tr>
+                    </thead>
+                    <tbody id="reclamosBody"></tbody>
+                </table>
+            </div>
+
+            <div id="contacto" class="section">
+                <h2>Contáctenos & Ubícanos</h2>
+                <div class="contact-grid">
+                    <div class="info-card">
+                        <h3>📞 Atención al cliente</h3>
+                        <p>📱 WhatsApp: +51 987 654 321</p>
+                        <p>📧 ventas@textilnova.pe</p>
+                        <p>🕒 Lunes a Sábado: 9am - 8pm</p>
+                        <p>📍 Tienda principal: Av. Universitaria 1234, Los Olivos, Lima</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>📍 Nuestra ubicación</h3>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.602776441771!2d-77.074490425638!3d-12.043788188143132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8f5e7a5b3b1%3A0x2c6b2b4e5c6f7a8d!2sLos%20Olivos%2C%20Lima!5e0!3m2!1ses!2spe!4v1713456789012!5m2!1ses!2spe" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <h3>📩 Escríbenos</h3>
+                    <form id="formContactoRapido">
                         <div class="form-group">
                             <label>Tu nombre</label>
-                            <input type="text" id="resNombre" placeholder="Ej: Carlos">
+                            <input type="text" id="contNombre" required>
                         </div>
                         <div class="form-group">
-                            <label>Calificación (⭐ 1-5)</label>
-                            <div class="stars-input" id="starsInput">
-                                <span class="star" data-value="1">★</span>
-                                <span class="star" data-value="2">★</span>
-                                <span class="star" data-value="3">★</span>
-                                <span class="star" data-value="4">★</span>
-                                <span class="star" data-value="5">★</span>
+                            <label>Correo</label>
+                            <input type="email" id="contEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Mensaje</label>
+                            <textarea rows="2" id="contMsg" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Enviar mensaje</button>
+                        <div id="contactoMsg"></div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Actualizado con los videos respectivos de cada sección -->
+            <div id="videos" class="section">
+                <h2>🎥 Videos destacados: Moda TextilNova</h2>
+                <div class="videos-grid">
+                    <div class="video-item">
+                        <iframe src="https://www.youtube.com/embed/QnGfs0ex_z8" allowfullscreen></iframe>
+                        <p>✨ Colección Primavera - Tejidos sostenibles</p>
+                    </div>
+                    <div class="video-item">
+                        <iframe src="https://www.youtube.com/embed/41x7rCtpU0A" allowfullscreen></iframe>
+                        <p>👟 Nueva línea de calzado urbano</p>
+                    </div>
+                    <div class="video-item">
+                        <iframe src="https://www.youtube.com/embed/El_EGZEIoKs" allowfullscreen></iframe>
+                        <p>🏭 Conoce nuestra fábrica textil</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="nosotros" class="section">
+                <h2>🌟 Sobre TextilNova</h2>
+                <div class="about-card">
+                    <h3>📖 Misión</h3>
+                    <p>Ser la marca líder de ropa, calzado y accesorios de calidad en el Perú ofreciendo productos para niños, mujeres y adultos de todas las tallas, a precios justos, con rapidez tanto física como virtual.</p>
+                    <h3>👁️ Visión</h3>
+                    <p>Convertirnos en una empresa líder del comercio electrónico nacional, reconocida por su plataforma innovadora, confiable y accesible. Queremos conectar con cada hogar peruano con moda inclusiva y tecnología.</p>
+                    <h3>🏭 Breve historia</h3>
+                    <p>TextilNova nació en 2015 en Los Olivos, desde una pequeña fábrica hasta tener presencia en Breña, La Victoria, Cercado y Los Olivos. Hoy combinamos tradición textil peruana con innovación digital.</p>
+                </div>
+            </div>
+
+            <div id="registro" class="section">
+                <h2>📝 Registro de Usuario</h2>
+                <form id="formRegistro">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nombre:</label>
+                            <input type="text" id="regNombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Apellido Paterno:</label>
+                            <input type="text" id="regApellidoP" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Apellido Materno:</label>
+                            <input type="text" id="regApellidoM" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Correo electrónico:</label>
+                            <input type="email" id="regEmail" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Contraseña:</label>
+                            <input type="password" id="regPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Confirmar contraseña:</label>
+                            <input type="password" id="regConfirmPassword" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Tipo de documento:</label>
+                            <select id="regTipoDoc">
+                                <option value="DNI">DNI</option>
+                                <option value="CE">Carné de Extranjería</option>
+                                <option value="RUC">RUC</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>N° de documento:</label>
+                            <input type="text" id="regNumDoc" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Fecha de nacimiento:</label>
+                            <input type="date" id="regFechaNac" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Número de celular:</label>
+                            <input type="tel" id="regCelular" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Departamento:</label>
+                            <select id="regDepartamento">
+                                <option value="">Selecciona</option>
+                                <option value="Lima">Lima</option>
+                                <option value="Arequipa">Arequipa</option>
+                                <option value="Cusco">Cusco</option>
+                                <option value="La Libertad">La Libertad</option>
+                                <option value="Piura">Piura</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Género:</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="genero" value="Hombre"> Hombre</label>
+                                <label><input type="radio" name="genero" value="Mujer"> Mujer</label>
                             </div>
-                            <input type="hidden" id="resCalificacion" value="0">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-submit">Registrarse</button>
+                    <div id="registroMsg"></div>
+                </form>
+            </div>
+
+            <div id="login" class="section">
+                <h2>🔐 Iniciar Sesión</h2>
+                <div class="login-container">
+                    <form id="formLogin">
+                        <div class="form-group">
+                            <label>Usuario (correo electrónico):</label>
+                            <input type="email" id="loginEmail" required>
                         </div>
                         <div class="form-group">
-                            <label>Tu comentario</label>
-                            <textarea id="resComentario" rows="3" placeholder="Comparte tu experiencia con este producto..."></textarea>
+                            <label>Contraseña:</label>
+                            <input type="password" id="loginPassword" required>
                         </div>
-                        <button id="enviarResenaBtn" class="btn-submit">Enviar reseña</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cart-section">
-                <h3>🛒 Carrito de Compras</h3>
-                <ul id="cartList"></ul>
-                <p><strong>Total: S/ <span id="cartTotal">0.00</span></strong></p>
-                <div class="codigo-descuento">
-                    <label>🎟️ Código de descuento:</label>
-                    <input type="text" id="codigoDescuento" placeholder="Ej: DESC10">
-                    <button id="aplicarDescuentoBtn" class="btn-small">Aplicar</button>
-                </div>
-                <button class="btn-submit" id="checkoutBtn">Finalizar Compra</button>
-                <div id="cartMessage"></div>
-            </div>
-        </div>
-
-        <div id="sugerencias" class="section">
-            <h2>📝 Formulario de Sugerencias</h2>
-            <form id="formSugerencia">
-                <div class="form-group">
-                    <label>Nombre completo</label>
-                    <input type="text" id="sugNombre" required>
-                </div>
-                <div class="form-group">
-                    <label>Correo electrónico</label>
-                    <input type="email" id="sugEmail" required>
-                </div>
-                <div class="form-group">
-                    <label>Tu sugerencia</label>
-                    <textarea rows="3" id="sugMensaje" required></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Enviar sugerencia</button>
-            </form>
-            <h3>📋 Sugerencias recibidas</h3>
-            <table class="tabla-datos">
-                <thead>
-                    <tr><th>Nombre</th><th>Correo</th><th>Sugerencia</th></tr>
-                </thead>
-                <tbody id="sugerenciasBody"></tbody>
-            </table>
-        </div>
-
-        <div id="reclamaciones" class="section">
-            <h2>📕 Libro de Reclamaciones</h2>
-            <form id="formReclamacion">
-                <div class="form-group">
-                    <label>DNI / RUC</label>
-                    <input type="text" id="recDoc" required>
-                </div>
-                <div class="form-group">
-                    <label>Nombre o Razón Social</label>
-                    <input type="text" id="recNombre" required>
-                </div>
-                <div class="form-group">
-                    <label>Pedido / Referencia (opcional)</label>
-                    <input type="text" id="recPedido">
-                </div>
-                <div class="form-group">
-                    <label>Motivo del reclamo</label>
-                    <textarea rows="3" id="recDetalle" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Medio de contacto</label>
-                    <input type="text" id="recContacto" placeholder="Teléfono o correo">
-                </div>
-                <button type="submit" class="btn-submit">Registrar Reclamación</button>
-            </form>
-            <h3>Reclamos registrados</h3>
-            <table class="tabla-datos">
-                <thead>
-                    <tr><th>Documento</th><th>Nombre</th><th>Reclamo</th><th>Contacto</th></tr>
-                </thead>
-                <tbody id="reclamosBody"></tbody>
-            </table>
-        </div>
-
-        <div id="contacto" class="section">
-            <h2>Contáctenos & Ubícanos</h2>
-            <div class="contact-grid">
-                <div class="info-card">
-                    <h3>📞 Atención al cliente</h3>
-                    <p>📱 WhatsApp: +51 987 654 321</p>
-                    <p>📧 ventas@textilnova.pe</p>
-                    <p>🕒 Lunes a Sábado: 9am - 8pm</p>
-                    <p>📍 Tienda principal: Av. Universitaria 1234, Los Olivos, Lima</p>
-                </div>
-                <div class="info-card">
-                    <h3>📍 Nuestra ubicación</h3>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.602776441771!2d-77.074490425638!3d-12.043788188143132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8f5e7a5b3b1%3A0x2c6b2b4e5c6f7a8d!2sLos%20Olivos%2C%20Lima!5e0!3m2!1ses!2spe!4v1713456789012!5m2!1ses!2spe" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="info-card">
-                <h3>📩 Escríbenos</h3>
-                <form id="formContactoRapido">
-                    <div class="form-group">
-                        <label>Tu nombre</label>
-                        <input type="text" id="contNombre" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Correo</label>
-                        <input type="email" id="contEmail" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Mensaje</label>
-                        <textarea rows="2" id="contMsg" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">Enviar mensaje</button>
-                    <div id="contactoMsg"></div>
-                </form>
-            </div>
-        </div>
-
-        <!-- Actualizado con los videos respectivos de cada sección -->
-        <div id="videos" class="section">
-            <h2>🎥 Videos destacados: Moda TextilNova</h2>
-            <div class="videos-grid">
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/QnGfs0ex_z8" allowfullscreen></iframe>
-                    <p>✨ Colección Primavera - Tejidos sostenibles</p>
-                </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/41x7rCtpU0A" allowfullscreen></iframe>
-                    <p>👟 Nueva línea de calzado urbano</p>
-                </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/El_EGZEIoKs" allowfullscreen></iframe>
-                    <p>🏭 Conoce nuestra fábrica textil</p>
-                </div>
-            </div>
-        </div>
-
-        <div id="nosotros" class="section">
-            <h2>🌟 Sobre TextilNova</h2>
-            <div class="about-card">
-                <h3>📖 Misión</h3>
-                <p>Ser la marca líder de ropa, calzado y accesorios de calidad en el Perú ofreciendo productos para niños, mujeres y adultos de todas las tallas, a precios justos, con rapidez tanto física como virtual.</p>
-                <h3>👁️ Visión</h3>
-                <p>Convertirnos en una empresa líder del comercio electrónico nacional, reconocida por su plataforma innovadora, confiable y accesible. Queremos conectar con cada hogar peruano con moda inclusiva y tecnología.</p>
-                <h3>🏭 Breve historia</h3>
-                <p>TextilNova nació en 2015 en Los Olivos, desde una pequeña fábrica hasta tener presencia en Breña, La Victoria, Cercado y Los Olivos. Hoy combinamos tradición textil peruana con innovación digital.</p>
-            </div>
-        </div>
-
-        <div id="registro" class="section">
-            <h2>📝 Registro de Usuario</h2>
-            <form id="formRegistro">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Nombre:</label>
-                        <input type="text" id="regNombre" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Apellido Paterno:</label>
-                        <input type="text" id="regApellidoP" required>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Apellido Materno:</label>
-                        <input type="text" id="regApellidoM" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Correo electrónico:</label>
-                        <input type="email" id="regEmail" required>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Contraseña:</label>
-                        <input type="password" id="regPassword" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Confirmar contraseña:</label>
-                        <input type="password" id="regConfirmPassword" required>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Tipo de documento:</label>
-                        <select id="regTipoDoc">
-                            <option value="DNI">DNI</option>
-                            <option value="CE">Carné de Extranjería</option>
-                            <option value="RUC">RUC</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>N° de documento:</label>
-                        <input type="text" id="regNumDoc" required>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Fecha de nacimiento:</label>
-                        <input type="date" id="regFechaNac" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Número de celular:</label>
-                        <input type="tel" id="regCelular" required>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Departamento:</label>
-                        <select id="regDepartamento">
-                            <option value="">Selecciona</option>
-                            <option value="Lima">Lima</option>
-                            <option value="Arequipa">Arequipa</option>
-                            <option value="Cusco">Cusco</option>
-                            <option value="La Libertad">La Libertad</option>
-                            <option value="Piura">Piura</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Género:</label>
-                        <div class="radio-group">
-                            <label><input type="radio" name="genero" value="Hombre"> Hombre</label>
-                            <label><input type="radio" name="genero" value="Mujer"> Mujer</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" id="recordarCheck"> Recordar</label>
+                            <a href="#" id="olvidePassword" class="link-olvide">Olvidé mi contraseña</a>
                         </div>
-                    </div>
+                        <button type="submit" class="btn-submit">INICIAR</button>
+                    </form>
+                    <div id="loginMsg"></div>
                 </div>
-                <button type="submit" class="btn-submit">Registrarse</button>
-                <div id="registroMsg"></div>
-            </form>
-        </div>
-
-        <div id="login" class="section">
-            <h2>🔐 Iniciar Sesión</h2>
-            <div class="login-container">
-                <form id="formLogin">
-                    <div class="form-group">
-                        <label>Usuario (correo electrónico):</label>
-                        <input type="email" id="loginEmail" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Contraseña:</label>
-                        <input type="password" id="loginPassword" required>
-                    </div>
-                    <div class="checkbox-group">
-                        <label><input type="checkbox" id="recordarCheck"> Recordar</label>
-                        <a href="#" id="olvidePassword" class="link-olvide">Olvidé mi contraseña</a>
-                    </div>
-                    <button type="submit" class="btn-submit">INICIAR</button>
-                </form>
-                <div id="loginMsg"></div>
             </div>
         </div>
-    </div>
 
-    <footer>
-        <div class="footer-links">
-            <a href="#" data-section="nosotros">Nosotros</a>
-            <a href="#" data-section="contacto">Contacto</a>
-            <a href="#" data-section="videos">Video</a>
-            <span>📧 correo@textilnova.pe</span>
+        <div id="footer"></div> <!-- Parte del footer -->
+
+        <!-- Importar todos los JSON para el correcto funcionamiento -->
+        <script src="js/datos.js"></script>
+        <script src="js/utilidades.js"></script>
+        <script src="js/catalogo.js"></script>
+        <script src="js/carrito.js"></script>
+        <script src="js/resenas.js"></script>
+        <script src="js/formularios.js"></script>
+        <script src="js/navegacion.js"></script>
+        <script src="js/componentes.js"></script>
+        <script src="js/main.js"></script>
+
+        <div style="text-align: center; margin: 20px;">
+            <button id="limpiarDatosBtn" style="background: #dc3545; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">🗑️ Limpiar todos los datos</button>
         </div>
-        <p>© 2026 TextilNova - Moda con identidad peruana | Compras 100% seguras</p>
-    </footer>
-
-    <!-- Importar todos los JSON para el correcto funcionamiento -->
-    <script src="js/datos.js"></script>
-
-    <script src="js/utilidades.js"></script>
-
-    <script src="js/catalogo.js"></script>
-
-    <script src="js/carrito.js"></script>
-
-    <script src="js/reseñas.js"></script>
-
-    <script src="js/formularios.js"></script>
-
-    <script src="js/navegacion.js"></script>
-
-    <script src="js/main.js"></script>
-    
-<div style="text-align: center; margin: 20px;">
-    <button id="limpiarDatosBtn" style="background: #dc3545; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">🗑️ Limpiar todos los datos</button>
-</div>
-    
-</body>
+    </body>
 </html>
